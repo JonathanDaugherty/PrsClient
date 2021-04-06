@@ -4,7 +4,7 @@ import {Request} from '../request.class';
 import {RequestService} from '../request.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
-@Component({
+@Component({ 
   selector: 'app-request-edit',
   templateUrl: './request-edit.component.html',
   styleUrls: ['./request-edit.component.css']

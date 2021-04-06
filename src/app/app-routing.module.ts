@@ -19,6 +19,8 @@ import {RequestListComponent} from './request/request-list/request-list.componen
 import {RequestDetailComponent} from './request/request-detail/request-detail.component';
 import {RequestCreateComponent} from './request/request-create/request-create.component';
 import {RequestEditComponent} from './request/request-edit/request-edit.component';
+import {RequestLinesComponent} from './request/request-lines/request-lines.component';
+import {RequestlinesEditComponent} from './requestlines/requestlines-edit/requestlines-edit.component';
 
 
 
@@ -48,6 +50,9 @@ const routes: Routes = [
   {path: 'requests/detail/:id', component:RequestDetailComponent},
   {path: 'requests/create', component:RequestCreateComponent},
   {path: 'requests/edit/:id', component:RequestEditComponent},
+  {path: 'requests/requestlines/:id', component:RequestLinesComponent},
+
+  {path: 'requestlines/edit/:id', component:RequestlinesEditComponent},
 
 
   {path: '**', component: HomeComponent}
