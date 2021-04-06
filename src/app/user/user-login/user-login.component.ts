@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {SystemService} from 'src/app/system.service';
 import {User} from '../user.class';
-import {UserService} from '../user.service' 
+import {UserService} from '../user.service'
+import {Request} from 'src/app/request/request.class';
+import {RequestService} from 'src/app/request/request.service';
+
 
 @Component({
   selector: 'app-user-login',
@@ -26,7 +29,7 @@ message: string = ''
       res => {
         console.log("User:", res, "Is logged in.");
         this.sys.loggedInUser = res;
-        this.router.navigateByUrl("/users/list");
+        this.router.navigateByUrl("requests/list");
       },
       err => {
         console.error(err);

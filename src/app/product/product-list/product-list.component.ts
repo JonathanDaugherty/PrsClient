@@ -12,6 +12,7 @@ import { SystemService } from 'src/app/system.service';
 export class ProductListComponent implements OnInit {
 
 products: Product[] = [];
+searchCriteria: string = "";
 
   constructor(
     private sys: SystemService,

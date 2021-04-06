@@ -2,7 +2,7 @@
 <div>
     <h3>Product List</h3>
     <span><a routerLink="/products/create">Create</a></span> 
-    <!-- <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span> -->
+    <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
 </div>
 <table class="table table-sm">
     <thead>
@@ -16,7 +16,7 @@
             <th>Unit</th>
             <th>Photopath</th>
         </tr>
-        <tr *ngFor = "let product of products ">
+        <tr *ngFor = "let product of products | searchProduct: searchCriteria ">
             <td>{{product.id}}</td>
             <td>{{product.vendor.name}}</td>
             <td>{{product.partNbr}}</td>
