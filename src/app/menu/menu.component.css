@@ -1,0 +1,20 @@
+nav {
+    background-color: rgb(50, 50, 50);
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    display:inline-block;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color:rgb(9, 211, 211);
+    padding: 0 10px;
+}
+a:hover {
+    background-color: black;
+    color:white;
+}
