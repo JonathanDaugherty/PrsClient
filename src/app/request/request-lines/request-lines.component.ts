@@ -15,8 +15,7 @@ export class RequestLinesComponent implements OnInit {
 
 request: Request = new Request();
 id: number = 0;
-showVerify: boolean = false;
-requestlines: Requestlines = new Requestlines();
+requestline: Requestlines = new Requestlines();
 
 
   constructor(
@@ -30,15 +29,15 @@ requestlines: Requestlines = new Requestlines();
     this.router.navigateByUrl(`requestlines/edit/${this.id}`)
   }
 
-  toggleVerify(): void {
-    this.showVerify =!this.showVerify
-  }
-
-  delete(): void {
-    this.rqlsvc.remove(this.requestlines).subscribe(
+  delete(requestline: Requestlines): void {
+    this.requestline.id = +this.requestline.id
+    this.requestline.productId = +this.requestline.productId
+    this.requestline.requestId = +this.requestline.requestId
+    console.log("B4 delete:", this.requestline)
+    this.rqlsvc.remove(requestline).subscribe(
       res => {
         console.log("Delete was Successful");
-        this.router.navigateByUrl("request/lines");
+        this.refresh();
       },
       err => {
         console.log(err);
@@ -46,8 +45,8 @@ requestlines: Requestlines = new Requestlines();
     );
   }
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params.id
+refresh(): void {
+  this.id = this.route.snapshot.params.id
     this.rqtsvc.get(this.id).subscribe(
       res => {
         console.log("Requests:", res);
@@ -57,5 +56,8 @@ requestlines: Requestlines = new Requestlines();
         console.error(err);
       }
     );
+  }
+  ngOnInit(): void {
+    this.refresh();
   }
 }

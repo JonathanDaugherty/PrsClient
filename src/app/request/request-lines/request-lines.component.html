@@ -2,7 +2,7 @@
 
 <div>
     <h3>Request Lines</h3>
-    <a routerLink="/requestlines/create">Create</a>
+
 </div>
 <table class="table table-sm">
     <thead>
@@ -23,7 +23,10 @@
         </tr>
     </thead>
 </table>
-<h5>Request Lines</h5>
+<div>
+    <span><h5>Request Lines</h5></span>
+    <span><a routerLink="/requestlines/create/{{request.id}}">Create</a></span>  
+</div>
 <table class="table table-sm">
     <tr>
         <th>Id</th>
@@ -41,7 +44,7 @@
         <td>{{requestline.product.price*requestline.quantity}}</td>
         <td>
             <a routerLink="/requestlines/edit/{{requestline.id}}">Edit</a> |
-            <a routerLink="/requestlines/remove/{{requestline.id}}">Delete</a>
+            <span><button (click)="delete(requestline)" class="btn btn-link">Delete</button></span>
         </td>
     </tr>
 </table>

@@ -21,6 +21,7 @@ import {RequestCreateComponent} from './request/request-create/request-create.co
 import {RequestEditComponent} from './request/request-edit/request-edit.component';
 import {RequestLinesComponent} from './request/request-lines/request-lines.component';
 import {RequestlinesEditComponent} from './requestlines/requestlines-edit/requestlines-edit.component';
+import {RequestlinesCreateComponent} from './requestlines/requestlines-create/requestlines-create.component';
 
 
 
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path: 'requests/requestlines/:id', component:RequestLinesComponent},
 
   {path: 'requestlines/edit/:id', component:RequestlinesEditComponent},
+  {path: 'requestlines/create/:id', component:RequestlinesCreateComponent},
 
 
   {path: '**', component: HomeComponent}
