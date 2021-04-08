@@ -4,7 +4,6 @@ import {Request} from '../request.class';
 import {Requestlines} from 'src/app/requestlines/requestlines.class';
 import {RequestlinesService} from 'src/app/requestlines/requestlines.service';
 import { RequestService } from '../request.service';
-import {User} from 'src/app/user/user.class';
 
 @Component({
   selector: 'app-request-lines',
@@ -24,6 +23,18 @@ requestline: Requestlines = new Requestlines();
     private route: ActivatedRoute,
     private router: Router
   ) { }
+
+  review(): void {
+    this.rqtsvc.review(this.request).subscribe(
+      res => {
+        console.log("Review initiated")
+        this.refresh();
+      },
+      err => {
+        console.error(err);
+      }
+    )
+  }
 
   edit(): void {
     this.router.navigateByUrl(`requestlines/edit/${this.id}`)

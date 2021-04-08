@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
     {display: 'Vendors', route: '/vendors/list'}, 
     {display: 'Products', route: '/products/list'},
     {display: 'Requests', route: '/requests/list'},
+    {display: 'Reviews', route: '/requests/review/:id'},
     {display: 'Login', route: '/login'}
   ]
 

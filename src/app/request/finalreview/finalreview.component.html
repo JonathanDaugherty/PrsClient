@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div>
-    <h3>Request Lines</h3>
+    <h3>Request Final Review</h3>
 
 </div>
 <table class="table table-sm">
@@ -10,23 +10,22 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Rejection Reason</th>
             <th>Status</th>
             <th>Total</th>
-            <th>Action</th>
         </tr>
         <tr *ngIf="request.user">
             <td>{{request.id}}</td>
             <td>{{request.user.username}}</td>
             <td>{{request.description}}</td>
+            <td>{{request.rejectionReason}}</td>
             <td>{{request.status}}</td>
             <td>{{request.total}}</td>
-            <td><span><button (click)="review()" class="btn btn-link">Review</button></span></td>
         </tr>
     </thead>
 </table>
 <div>
     <span><h5>Request Lines</h5></span>
-    <span><a routerLink="/requestlines/create/{{request.id}}">Create</a></span>  
 </div>
 <table class="table table-sm">
     <tr>
@@ -35,7 +34,6 @@
         <th>Quantity</th>
         <th>Price</th>
         <th>Total</th>
-        <th>Actions</th>
     </tr>
     <tr *ngFor="let requestline of request.requestLines">
         <td>{{requestline.id}}</td>
@@ -43,12 +41,15 @@
         <td>{{requestline.quantity}}</td>
         <td>{{requestline.product.price}}</td>
         <td>{{requestline.product.price*requestline.quantity}}</td>
-        <td>
-            <a routerLink="/requestlines/edit/{{requestline.id}}">Edit</a> |
-            <span><button (click)="delete(requestline)" class="btn btn-link">Delete</button></span>
-        </td>
     </tr>
 </table>
+<button (click)="approve()" class="btn btn-success">Approve</button> |
+<button (click)="toggleVerify()" class="btn btn-danger">Reject</button>
+<span *ngIf="showVerify">
+    <input [(ngModel)]="request.rejectionreason" type="text" placeholder="Rejection Reason">
+    <button (click)="reject()" class="btn btn-danger">Verify Reject</button>
+</span>
+
 
 
 
