@@ -4,6 +4,7 @@ import {ProductService} from '../product.service';
 import {Product} from '../product.class';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import {VendorService} from 'src/app/vendor/vendor.service';
+import {SystemService} from 'src/app/system.service';
 
 
 @Component({
@@ -20,7 +21,9 @@ vendors: Vendor[] = [];
   constructor(
     private pdtsvc: ProductService,
     private vdrsvc: VendorService,
-    private router: Router
+    private router: Router,
+    private sys: SystemService
+
   ) { }
 
   save(): void {

@@ -9,11 +9,13 @@ import {Router} from '@angular/router';
 export class SystemService {
 
 loggedInUser: User = null;
+user: User = null;
+get isAdmin() {return this.loggedInUser != null && this.loggedInUser.isAdmin;}
 
   constructor(
     private router: Router
   ) { }
-  
+
   
   chkLogin(): void {
     if(this.loggedInUser == null) {

@@ -30,6 +30,7 @@ showVerify: boolean = false;
 
   approve(): void {
     console.log("B4 Approval: ", this.request)
+    this.request.rejectionreason = "";
     this.rqtsvc.approve(this.request).subscribe(
       res => {
         console.log("Approved successfully")

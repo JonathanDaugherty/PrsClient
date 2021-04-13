@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: black;
+    font-family: monospace;
+}
+td{
+    color: green;
+}
+th{
+    color: green;
+}
+a{
+    color: green;
+}
+h3{
+    color: green;
+}
+input{
+    background-color: black;
+    color: green;
+}
+button{
+    color: green;
+}
+h5{
+    color: green;
+}

@@ -15,6 +15,7 @@
             <th>Price</th>
             <th>Unit</th>
             <th>Photopath</th>
+            <th>Actions</th>
         </tr>
         <tr *ngFor = "let product of products | searchProduct: searchCriteria ">
             <td>{{product.id}}</td>

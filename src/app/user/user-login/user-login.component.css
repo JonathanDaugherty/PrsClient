@@ -1,3 +1,33 @@
-div{
-    align-items: center;
+body {
+    background-color: black;
+}
+
+.container{
+margin:auto;
+padding: 250px 528px;
+text-align: center;
+}
+.child{
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    border-style:solid;
+    color: green;
+    background-color: black;
+}
+.child input{
+    width: 50;
+    padding: 20 20;     
+    clear: both;
+    background-color: black;
+    color: green;
+}
+button {
+    color: black;
+    background-color: green;
+    padding: 0px 0px;
+}
+h3{
+    color: green;
 }
